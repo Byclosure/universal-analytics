@@ -60,7 +60,7 @@ public class ClientAnalytics extends AnalyticsImpl {
     };
 
     @Inject
-    ClientAnalytics(
+    public ClientAnalytics(
             @GaAccount String userAccount,
             @AutoCreate boolean autoCreate,
             @AutoInject boolean autoInject,
@@ -213,7 +213,7 @@ public class ClientAnalytics extends AnalyticsImpl {
                 '__ua');
     }-*/;
 
-    private native void nativeCall(JavaScriptObject params) /*-{
+    protected native void nativeCall(JavaScriptObject params) /*-{
         $wnd.__ua.apply(null, params);
     }-*/;
 
